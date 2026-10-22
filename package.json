@@ -43,5 +43,10 @@
     "vite": "^8.3.4",
     "vitest": "^5.0.5"
   },
-  "packageManager": "pnpm@9.15.9"
+  "packageManager": "pnpm@9.15.9",
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
 }
