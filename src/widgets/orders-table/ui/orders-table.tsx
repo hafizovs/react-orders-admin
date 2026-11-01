@@ -88,8 +88,17 @@ export function OrdersTable() {
   }
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
-      <table className="min-w-full divide-y divide-[var(--border)] text-sm">
+    <div className="min-w-0">
+      <p className="mb-2 text-xs text-[var(--muted-foreground)] md:hidden">
+        Swipe horizontally to see all columns.
+      </p>
+      <div
+        className="overflow-x-auto overscroll-x-contain rounded-lg border border-[var(--border)] [-webkit-overflow-scrolling:touch]"
+        tabIndex={0}
+        role="region"
+        aria-label="Orders table"
+      >
+        <table className="w-full min-w-[40rem] divide-y divide-[var(--border)] text-sm md:min-w-full">
         <thead className="bg-[var(--muted)]">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -123,12 +132,13 @@ export function OrdersTable() {
             </tr>
           ))}
         </tbody>
-      </table>
-      {filtered.length === 0 ? (
-        <p className="px-4 py-6 text-center text-sm text-[var(--muted-foreground)]">
-          No orders match this filter.
-        </p>
-      ) : null}
+        </table>
+        {filtered.length === 0 ? (
+          <p className="px-4 py-6 text-center text-sm text-[var(--muted-foreground)]">
+            No orders match this filter.
+          </p>
+        ) : null}
+      </div>
     </div>
   )
 }

@@ -16,10 +16,10 @@ export function StatusFilterSelect() {
   const statusFilter = useAppSelector(selectStatusFilter)
 
   return (
-    <label className="flex items-center gap-2 text-sm text-[var(--muted-foreground)]">
+    <label className="flex min-w-0 flex-col gap-1 text-sm text-[var(--muted-foreground)] sm:flex-row sm:items-center sm:gap-2">
       Status
       <select
-        className="h-9 rounded-md border border-[var(--border)] bg-white px-3 text-sm text-[var(--text-h)]"
+        className="h-9 w-full min-w-0 rounded-md border border-[var(--border)] bg-white px-3 text-sm text-[var(--text-h)] sm:w-auto"
         value={statusFilter}
         onChange={(event) =>
           dispatch(

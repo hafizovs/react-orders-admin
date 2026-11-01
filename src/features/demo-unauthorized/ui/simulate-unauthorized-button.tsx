@@ -3,7 +3,13 @@ import { toast } from 'sonner'
 import { useGetOrdersQuery } from '@/entities/order'
 import { Button } from '@/shared/ui'
 
-export function SimulateUnauthorizedButton() {
+type SimulateUnauthorizedButtonProps = {
+  className?: string
+}
+
+export function SimulateUnauthorizedButton({
+  className,
+}: SimulateUnauthorizedButtonProps) {
   const { refetch, isFetching } = useGetOrdersQuery()
 
   async function handleClick() {
@@ -17,6 +23,7 @@ export function SimulateUnauthorizedButton() {
       type="button"
       variant="outline"
       size="sm"
+      className={className}
       onClick={() => void handleClick()}
       disabled={isFetching}
     >
