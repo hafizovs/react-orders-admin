@@ -24,6 +24,10 @@ Redux Toolkit admin console for an order list, order detail, and status updates.
 
 Redux Toolkit admin console for order list, detail, and status updates — RTK Query, TanStack Table, MSW.
 
+## Responsive layout
+
+Partial adaptive chrome for phone (~375px) and tablet (~768px): toolbars and panels stack or collapse on narrow viewports, with no page-level horizontal scroll. Desktop-first cores (canvas, boards, dense tables) stay simplified on small screens rather than a full mobile redesign.
+
 ## Scripts
 
 ```bash
